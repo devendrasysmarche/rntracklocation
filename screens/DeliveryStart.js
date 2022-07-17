@@ -67,11 +67,11 @@ var globalSocket;
 function getBackLoc(taskData) {
     const initAndSendToSocket = (data) => {
         try {
-            let oid = taskData?.orderid ? taskData?.orderid: "1"
+            let orderid = taskData?.orderid ? taskData?.orderid: "1"
             if (typeof globalSocket == 'undefined') {
                 console.log('init globalsocket');
                 globalSocket = socketIOClient(SOCKET_SERVER_URL, {
-                    query: { oid },
+                    query: { orderid },
                 });
             }
             globalSocket?.emit(NEW_CHAT_MESSAGE_EVENT, {"orderid":taskData?.orderid, "latlon":data, "action": "Background"});
@@ -207,11 +207,11 @@ const DeliveryStart = () => {
     }, [orderid]);
     async function initializeSocket() {
         if (socketIOClient){
-            let oid = orderid ? orderid: "1"
+            // let oid = orderid ? orderid: "1"
             socketRef.current = socketIOClient(SOCKET_SERVER_URL, {
-                query: { oid },
+                query: { orderid },
             });
-            console.log('Initialize socket', oid);
+            console.log('Initialize socket', orderid);
         }
     }
     const sendMessage = (messageBody) => {
