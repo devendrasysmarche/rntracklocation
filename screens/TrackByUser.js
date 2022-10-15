@@ -39,7 +39,10 @@ const TrackByUser = ({ navigation }) => {
         // home user
     }
     const [state, setState] = React.useState({
-        curLoc: {},
+        curLoc: {
+            latitude: latlon.lat,
+            longitude: latlon.lon,
+        },
         // {
         //     latitude: latlon.lat,
         //     longitude: latlon.lon,
