@@ -35,7 +35,7 @@
       </activity>
       <meta-data
         android:name="com.google.android.geo.API_KEY"
-        android:value="YOURAPIKEY"
+        android:value="AIzaSyC1nO61soGTTd3MzHWbvoXvilG3hXGygNU"
         />
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
       <service android:name="com.asterinet.react.bgactions.RNBackgroundActionsTask" />

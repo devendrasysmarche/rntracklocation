@@ -22,7 +22,7 @@ const NEW_CHAT_MESSAGE_EVENT = "newLocationFound";
 io.on("connection", (socket) => {
   
   // Join a conversation
-  const  {roomId}  = socket.handshake.query; // ?.orderid;
+  const  roomId  = socket.handshake.query?.orderid; // ?.orderid;
   console.log('roomId', roomId, socket.handshake.query);
 //   console.log('roomId', roomId, socket.handshake.query?.orderid);
   socket.join(roomId);
